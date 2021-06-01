@@ -53,7 +53,7 @@ $white=imagecolorallocate($im, 255, 255, 255);
       $b=rand(0,255);
     //RANDOM INDEX FOR RANDOM TEXT FONT
       $index=rand(1,10);
-	  $dir=__DIR__ ."./fonts/".$index.'.ttf';
+	  $dir="https://captchatyping.herokuapp.com/captcha-generator/fonts/".$index.'.ttf';
 	 
 	   
 	 
