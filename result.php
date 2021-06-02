@@ -48,7 +48,7 @@ $("#submit-to-google-sheet").submit((e)=>{
                 method:"post",
                 success:function (response){
                     alert("Form submitted successfully");
-					window.location.href = 'login.php'; 
+					window.location.href = 'index.php'; 
                     
                     
                 },
