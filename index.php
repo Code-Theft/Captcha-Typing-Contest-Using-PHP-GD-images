@@ -23,13 +23,13 @@ function test_input($data) {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
 <body>
-<div class="container">
+<div class="form">
 
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
     <p>LOGIN HERE</p>
-    <div><input type="name"  name="name"  placeholder="Name" required></div>
-	<div><input type="email" name="email" placeholder="Email" required></div>  	  	
-	<div><input type="submit" name="submit" value="Submit"  >  </div>
+    <div><input type="name"  name="name"  class="user" placeholder="Name" required></div>
+	<div><input type="email" name="email" placeholder="Email"  class="pass" required></div>  	  	
+	<div><input type="submit" name="submit" value="Submit"  class="user" >  </div>
    </form>	
 			
 <div>
