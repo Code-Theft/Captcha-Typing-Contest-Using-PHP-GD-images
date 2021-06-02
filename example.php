@@ -92,7 +92,7 @@ session_start();
 	
     $(document).ready(function() {
         var timer2 = localStorage.getItem('timer');
-        if(timer2 === null) timer2 = "0:10";
+        if(timer2 === null) timer2 = "1:10";
         $('.countdown').html(timer2);
 
         var interval = setInterval(function() {
