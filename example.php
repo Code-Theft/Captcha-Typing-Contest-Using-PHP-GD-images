@@ -1,12 +1,15 @@
 <?php
 session_start();
 
-?>						
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="style.css">
-<body>
+?>	
+<html>
+<head>
+	<title>Do not Exit /Refresh </title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>	
 
 <style>
 #clockdiv{
@@ -16,19 +19,22 @@ session_start();
 	font-weight: 100;
 	text-align: center;
 	font-size: 30px;
+	position: absolute;
+	left: 30px;
+	top:30px;
 }
 
 #clockdiv > div{
 	padding: 10px;
 	border-radius: 3px;
-	background: #cda7d9;
+	background: #57c9ad;
 	display: inline-block;
 }
 
 #clockdiv div > span{
 	padding: 15px;
 	border-radius: 3px;
-	background: #de0da3;
+	background: #d1ebe4;
 	display: inline-block;
 }
 
@@ -37,7 +43,7 @@ session_start();
 	font-size: 16px;
 }
 </style>
-
+<body>
 
 <div id="clockdiv" >  
   <div>
@@ -47,28 +53,25 @@ session_start();
   </div>
 </div>
 
-
-
 <div class="container">
-
   <form method = "POST" autocomplete="off" >
-    
-	<div >
-		<div id="ae_captcha_api"></div>
-	</div>	
+    <div class="items">
+		<div style="padding:10px 0 20px 0;">
+			<div id="ae_captcha_api"></div>
+		</div>	
 	
-		<div><input type="text" placeholder = "Enter Captcha" name="user_input"/></div>
-		<div><input type="submit" formaction="./validate.php" value = "SUBMIT"/></div>
-		<div><input type="submit" onclick="newcaptcha()" value = "SKIP"/></div>
-		<div>
+		<input type="text" placeholder = "Enter Captcha" name="user_input"/>
+		<input id="button" type="submit" formaction="./validate.php" value = "SUBMIT"/>
+		<input id="button" type="submit" onclick="newcaptcha()" value = "SKIP"/>
+		<div id="sign">
 			<label>Current Score</label>
 			<?php
 					
-			echo "<div>".$_SESSION['score'];
+			echo $_SESSION['score'];
 				
 			?>
 		</div>
-		<div>
+		<div id="sign">
 			<label>Negative  Score</label>
 			<?php			
 			echo $_SESSION['n-score'];			
@@ -80,22 +83,16 @@ session_start();
 		</div>
 		
 		
-			
-      </form>
-	  <div>
-		<div class="drops">
-			<div class="drop drop-1"></div>
-			<div class="drop drop-2"></div>    
-			<div class="drop drop-4"></div>  
-		</div>
 	</div>
+  </form>
+	  
 <script src="./captcha-generator/asset/main.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 	
     $(document).ready(function() {
         var timer2 = localStorage.getItem('timer');
-        if(timer2 === null) timer2 = "1:10";
+        if(timer2 === null) timer2 = "0:10";
         $('.countdown').html(timer2);
 
         var interval = setInterval(function() {
@@ -120,3 +117,4 @@ session_start();
 
 </script>
 </body>
+</html>
